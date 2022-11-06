@@ -25,7 +25,6 @@ def data_processing():
     oi_data = oi_data[oi_data.Strike_Price < (ltp+2000) ]
     oi_data = oi_data[oi_data.Strike_Price > (ltp-2000) ]
 
-    #oi_data.to_csv (r'C:\Users\loner\Documents\Python Codes\Python NSE OI\NSE-OPEN INTREST\test1.csv', index = None)
 
     plot = px.Figure(data=[px.Bar(name = 'CE',x = oi_data['Strike Price'],y = oi_data['CALLS_OI']*50), 
            px.Bar(name = 'PE',x = oi_data['Strike Price'],y = oi_data['PUTS_OI']*50)],
